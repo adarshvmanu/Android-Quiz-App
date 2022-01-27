@@ -47,10 +47,10 @@ class SecondActivity : AppCompatActivity() {
         optionB.isChecked = false
         optionC.isChecked = false
         optionD.isChecked = false
-        optionA.setTextColor(Color.parseColor("#000000"))
-        optionB.setTextColor(Color.parseColor("#000000"))
-        optionC.setTextColor(Color.parseColor("#000000"))
-        optionD.setTextColor(Color.parseColor("#000000"))
+        optionA.setTextColor(Color.parseColor("#616161"))
+        optionB.setTextColor(Color.parseColor("#616161"))
+        optionC.setTextColor(Color.parseColor("#616161"))
+        optionD.setTextColor(Color.parseColor("#616161"))
     }
     fun display(index : Int) {
        question.text = questionBank.get(index).question.toString()
@@ -71,7 +71,7 @@ class SecondActivity : AppCompatActivity() {
             optionB.setTextColor(Color.parseColor("#008000"))
         }else if(optionC.text == value) {
             optionC.setTextColor(Color.parseColor("#008000"))
-        }else{
+        }else if(optionD.text == value){
             optionD.setTextColor(Color.parseColor("#008000"))
         }
     }
@@ -104,15 +104,14 @@ class SecondActivity : AppCompatActivity() {
         submitButton.setOnClickListener{
             if (isCorrect(questionBank.get(questionNo).answer))
             {
+                isAnswer(questionBank.get(questionNo).answer)
                 score=score+10
                 scoreboard.text = "Score : " + score.toString()
-                isAnswer(questionBank.get(questionNo).answer)
             }
-
             if (questionNo < questionBank.size-1) {
-               questionNo++
+                questionNo++
                 clearAll()
-               display(questionNo)
+                display(questionNo)
             }
             else{
                 var intent =Intent(this,ResultActivity::class.java)
