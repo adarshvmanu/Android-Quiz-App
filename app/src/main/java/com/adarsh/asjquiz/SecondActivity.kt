@@ -65,15 +65,28 @@ class SecondActivity : AppCompatActivity() {
         return answer==value
     }
     fun isAnswer(value : String) {
-        if(optionA.text == value ) {
+        if (optionA.text == value) {
             optionA.setTextColor(Color.parseColor("#008000"))
-        }else if(optionB.text == value){
+        } else if (optionB.text == value) {
             optionB.setTextColor(Color.parseColor("#008000"))
-        }else if(optionC.text == value) {
+        } else if (optionC.text == value) {
             optionC.setTextColor(Color.parseColor("#008000"))
-        }else if(optionD.text == value){
+        } else if (optionD.text == value) {
             optionD.setTextColor(Color.parseColor("#008000"))
         }
+        submitButton.text="Next"
+    }
+    fun isNotAnswer(){
+        if (optionA.isChecked) {
+            optionA.setTextColor(Color.parseColor("#fc4903"))
+        } else if (optionB.isChecked) {
+            optionB.setTextColor(Color.parseColor("#fc4903"))
+        } else if (optionC.isChecked) {
+            optionC.setTextColor(Color.parseColor("#fc4903"))
+        } else if (optionD.isChecked) {
+            optionD.setTextColor(Color.parseColor("#fc4903"))
+        }
+        submitButton.text="Next"
     }
 
     fun initListeners() {
@@ -81,34 +94,38 @@ class SecondActivity : AppCompatActivity() {
             clearAll()
             optionA.isChecked = true
             answer=optionA.text.toString()
-            submitButton.text="Submit"
+            submitButton.text="Check Answer"
         }
         optionB.setOnClickListener{
             clearAll()
             optionB.isChecked = true
             answer=optionB.text.toString()
-            submitButton.text="Submit"
+            submitButton.text="Check Answer"
         }
         optionC.setOnClickListener {
             clearAll()
             optionC.isChecked = true
             answer=optionC.text.toString()
-            submitButton.text="Submit"
+            submitButton.text="Check Answer"
         }
         optionD.setOnClickListener {
             clearAll()
             optionD.isChecked = true
             answer=optionD.text.toString()
-            submitButton.text="Submit"
+            submitButton.text="Check Answer"
         }
         submitButton.setOnClickListener{
-            if (isCorrect(questionBank.get(questionNo).answer))
+            if (isCorrect(questionBank.get(questionNo).answer)&&submitButton.text=="Check Answer")
             {
                 isAnswer(questionBank.get(questionNo).answer)
                 score=score+10
                 scoreboard.text = "Score : " + score.toString()
             }
-            if (questionNo < questionBank.size-1) {
+            else if(!isCorrect(questionBank.get(questionNo).answer)&&submitButton.text=="Check Answer")
+            {
+                isNotAnswer()
+            }
+            else if(questionNo < questionBank.size-1) {
                 questionNo++
                 clearAll()
                 display(questionNo)

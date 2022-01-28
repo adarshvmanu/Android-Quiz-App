@@ -6,7 +6,7 @@
     <string name="asj_quiz">TechWiz Quiz</string>
     <string name="question_no">Question no :</string>
     <string name="points">Points</string>
-<string name="congratulations">Congratulations!</string>
+    <string name="congratulations">Congratulations!</string>
     <string name="submit">Next</string>
     <string name="radiobutton">RadioButton</string>
     <string name="question">Question</string>

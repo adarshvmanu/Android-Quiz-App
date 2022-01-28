@@ -7,11 +7,12 @@
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
+
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">#003044</item>
+        <item name="android:statusBarColor" tools:targetApi="l">#333333</item>
         <!-- Customize your theme here. -->
-        <item name="android:navigationBarColor">#003044</item>
+        <item name="android:navigationBarColor">#333333</item>
     </style>
 </resources>
