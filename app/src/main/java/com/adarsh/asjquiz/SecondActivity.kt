@@ -47,10 +47,10 @@ class SecondActivity : AppCompatActivity() {
         optionB.isChecked = false
         optionC.isChecked = false
         optionD.isChecked = false
-        optionA.setTextColor(Color.parseColor("#616161"))
-        optionB.setTextColor(Color.parseColor("#616161"))
-        optionC.setTextColor(Color.parseColor("#616161"))
-        optionD.setTextColor(Color.parseColor("#616161"))
+        optionA.setTextColor(Color.parseColor("#F3F3F3"))
+        optionB.setTextColor(Color.parseColor("#F3F3F3"))
+        optionC.setTextColor(Color.parseColor("#F3F3F3"))
+        optionD.setTextColor(Color.parseColor("#F3F3F3"))
     }
     fun display(index : Int) {
        question.text = questionBank.get(index).question.toString()

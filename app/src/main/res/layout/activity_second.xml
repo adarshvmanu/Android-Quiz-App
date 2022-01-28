@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".SecondActivity"
+    android:background="#333333">
 
     <TextView
         android:id="@+id/points"
@@ -32,7 +33,8 @@
         app:layout_constraintEnd_toStartOf="@+id/points"
         app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#F3F3F3"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -41,7 +43,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="@string/question"
-        android:textColor="#616161"
+        android:textColor="#F3F3F3"
         android:textSize="20sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +59,7 @@
         android:layout_marginTop="128dp"
         android:buttonTint="#ff9900"
         android:text="@string/option_a"
-        android:textColor="#616161"
+        android:textColor="#F3F3F3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +74,7 @@
         android:layout_marginTop="24dp"
         android:buttonTint="#ff9900"
         android:text="@string/option_b"
-        android:textColor="#616161"
+        android:textColor="#F3F3F3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +88,7 @@
         android:layout_marginTop="24dp"
         android:buttonTint="#ff9900"
         android:text="@string/option_c"
-        android:textColor="#616161"
+        android:textColor="#F3F3F3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +102,7 @@
         android:layout_marginTop="24dp"
         android:buttonTint="#ff9900"
         android:text="@string/option_d"
-        android:textColor="#616161"
+        android:textColor="#F3F3F3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +120,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioButton7"
         app:layout_constraintVertical_bias="0.7"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck"
+        android:textColor="#F3F3F3"/>
 
     <ImageView
         android:id="@+id/imageView4"
