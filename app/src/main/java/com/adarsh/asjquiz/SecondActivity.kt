@@ -22,6 +22,7 @@ class SecondActivity : AppCompatActivity() {
     private lateinit var questionBank : ArrayList<Questions>
     private var questionNo : Int = 0
     private var score : Int = 0
+    private var done : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +76,7 @@ class SecondActivity : AppCompatActivity() {
             optionD.setTextColor(Color.parseColor("#008000"))
         }
         submitButton.text="Next"
+        done=true
     }
     fun isNotAnswer(){
         if (optionA.isChecked) {
@@ -87,6 +89,7 @@ class SecondActivity : AppCompatActivity() {
             optionD.setTextColor(Color.parseColor("#fc4903"))
         }
         submitButton.text="Next"
+        done=true
     }
 
     fun initListeners() {
@@ -94,41 +97,50 @@ class SecondActivity : AppCompatActivity() {
             clearAll()
             optionA.isChecked = true
             answer=optionA.text.toString()
-            submitButton.text="Check Answer"
+            if(!done) {
+                submitButton.text = "Check Answer"
+            }
         }
         optionB.setOnClickListener{
             clearAll()
             optionB.isChecked = true
             answer=optionB.text.toString()
-            submitButton.text="Check Answer"
+            if(!done) {
+                submitButton.text = "Check Answer"
+            }
         }
         optionC.setOnClickListener {
             clearAll()
             optionC.isChecked = true
             answer=optionC.text.toString()
-            submitButton.text="Check Answer"
+            if(!done) {
+                submitButton.text = "Check Answer"
+            }
         }
         optionD.setOnClickListener {
             clearAll()
             optionD.isChecked = true
             answer=optionD.text.toString()
-            submitButton.text="Check Answer"
+            if(!done) {
+                submitButton.text = "Check Answer"
+            }
         }
         submitButton.setOnClickListener{
-            if (isCorrect(questionBank.get(questionNo).answer)&&submitButton.text=="Check Answer")
+            if (isCorrect(questionBank.get(questionNo).answer)&&submitButton.text=="Check Answer" && !done)
             {
-                isAnswer(questionBank.get(questionNo).answer)
-                score=score+10
-                scoreboard.text = "Score : " + score.toString()
+                    isAnswer(questionBank.get(questionNo).answer)
+                    score = score + 10
+                    scoreboard.text = "Score : " + score.toString()
             }
-            else if(!isCorrect(questionBank.get(questionNo).answer)&&submitButton.text=="Check Answer")
+            else if(!isCorrect(questionBank.get(questionNo).answer)&&submitButton.text=="Check Answer" && !done)
             {
-                isNotAnswer()
+                    isNotAnswer()
             }
             else if(questionNo < questionBank.size-1) {
                 questionNo++
                 clearAll()
                 display(questionNo)
+                done=false
             }
             else{
                 var intent =Intent(this,ResultActivity::class.java)
