@@ -41,7 +41,7 @@
         android:layout_width="329dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:text="@string/question"
         android:textColor="#F3F3F3"
         android:textSize="20sp"
