@@ -135,6 +135,7 @@ class SecondActivity : AppCompatActivity() {
             else if(!isCorrect(questionBank.get(questionNo).answer)&&submitButton.text=="Check Answer" && !done)
             {
                     isNotAnswer()
+                    isAnswer(questionBank.get(questionNo).answer)
             }
             else if(questionNo < questionBank.size-1) {
                 questionNo++
